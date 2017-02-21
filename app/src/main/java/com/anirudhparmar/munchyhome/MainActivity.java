@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         //   mYelp_List = (ListView) findViewById(R.id.yelp_list);
         mParams = new HashMap<>();
         // general params
-        mParams.put("term", "food");
+        mParams.put("term", "coffe");
 
         new FetchYelpSearch().execute();
 
@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 int totalNumberOfResult = searchResponse.total();
 
                 ArrayList<Business> businesses = searchResponse.businesses();
+
                 String buisnessImage = businesses.get(0).imageUrl();
                 String businessName = businesses.get(0).name();  // "JapaCurry Truck"
                 String ratingImageUrl = businesses.get(0).ratingImgUrlSmall();
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 String mobileUrl = businesses.get(0).mobileUrl();
 
                 //display in card
+                System.out.println("totalNumberOfResult :" +totalNumberOfResult);
                 System.out.println("buisnessImage : " +buisnessImage);
                 System.out.println("businessName : " +businessName);
                 System.out.println("ratingImageUrl : "+ratingImageUrl);
